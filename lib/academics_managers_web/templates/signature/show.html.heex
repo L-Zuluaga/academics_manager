@@ -1,0 +1,18 @@
+<h1>Show Signature</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @signature.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @signature.description %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.signature_path(@conn, :edit, @signature) %></span> |
+<span><%= link "Back", to: Routes.signature_path(@conn, :index) %></span>

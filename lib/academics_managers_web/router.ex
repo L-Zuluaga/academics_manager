@@ -18,6 +18,8 @@ defmodule AcademicsManagersWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    resources "/signatures", SignatureController
+    resources "/students", StudentController
   end
 
   # Other scopes may use custom stacks.

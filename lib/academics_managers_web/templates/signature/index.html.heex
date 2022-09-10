@@ -1,0 +1,28 @@
+<h1>Listing Signatures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for signature <- @signatures do %>
+    <tr>
+      <td><%= signature.name %></td>
+      <td><%= signature.description %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.signature_path(@conn, :show, signature) %></span>
+        <span><%= link "Edit", to: Routes.signature_path(@conn, :edit, signature) %></span>
+        <span><%= link "Delete", to: Routes.signature_path(@conn, :delete, signature), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Signature", to: Routes.signature_path(@conn, :new) %></span>
