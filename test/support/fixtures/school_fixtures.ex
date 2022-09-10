@@ -18,4 +18,22 @@ defmodule AcademicsManagers.SchoolFixtures do
 
     signature
   end
+
+  @doc """
+  Generate a student.
+  """
+  def student_fixture(attrs \\ %{}) do
+    {:ok, student} =
+      attrs
+      |> Enum.into(%{
+        age: 42,
+        email: "some email",
+        name: "some name",
+        semester: 42,
+        student_code: "some student_code"
+      })
+      |> AcademicsManagers.School.create_student()
+
+    student
+  end
 end
