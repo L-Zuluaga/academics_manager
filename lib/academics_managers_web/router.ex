@@ -19,6 +19,7 @@ defmodule AcademicsManagersWeb.Router do
 
     get "/", PageController, :index
     resources "/signatures", SignatureController
+    resources "/students", StudentController
   end
 
   # Other scopes may use custom stacks.
